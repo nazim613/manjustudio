@@ -72,45 +72,35 @@ export default function BottomNav() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────────
-          1. FLOATING BOTTOM NAVIGATION BAR (Book Appointment & Contact Now)
+          1. EYE-CATCHY ANIMATED FLOATING BOTTOM NAV BAR
       ────────────────────────────────────────────────────────────── */}
-      <div className="fixed bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-40 w-[94%] max-w-md sm:max-w-lg select-none">
-        <div className="bg-[#1A1918]/92 backdrop-blur-2xl p-1.5 sm:p-2 rounded-full border border-white/20 shadow-[0_16px_40px_rgba(0,0,0,0.35)] flex items-center justify-between gap-1.5 sm:gap-2">
-          
-          {/* Left Button: Book Appointment */}
-          <button
-            onClick={() => {
-              setIsContactOpen(false);
-              setIsAppointmentOpen(true);
-            }}
-            className="flex-1 py-2.5 sm:py-3 px-3 sm:px-5 rounded-full bg-[#A76D58] hover:bg-[#8F5A47] text-white flex items-center justify-center gap-1.5 sm:gap-2 font-medium text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-md active:scale-95 cursor-pointer group"
-          >
-            <svg
-              className="w-4 h-4 transition-transform group-hover:scale-110"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            <span className="font-semibold truncate">Book Appointment</span>
-          </button>
+      <aside
+        aria-label="Quick Actions Navigation"
+        className="fixed bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-40 w-[94%] max-w-md sm:max-w-lg select-none"
+      >
+        {/* Ambient Breathing Underglow Aura */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-[#A76D58]/35 via-[#D4AF37]/25 to-[#A76D58]/35 rounded-full blur-xl animate-gentle-pulse pointer-events-none -z-10" />
 
-          {/* Right Button: Contact Now */}
+        {/* Dynamic Island Capsule Container */}
+        <div className="relative bg-[#141312]/92 backdrop-blur-2xl p-1.5 sm:p-2 rounded-full border border-white/20 shadow-[0_16px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(167,109,88,0.18)] ring-1 ring-white/10 flex items-center justify-between gap-1.5 sm:gap-2">
+          
+          {/* LEFT BUTTON: Contact Now */}
           <button
             onClick={() => {
               setIsAppointmentOpen(false);
               setIsContactOpen(true);
             }}
-            className="flex-1 py-2.5 sm:py-3 px-3 sm:px-5 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center gap-1.5 sm:gap-2 font-medium text-xs sm:text-sm tracking-wide transition-all duration-300 border border-white/15 active:scale-95 cursor-pointer group"
+            className="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-full bg-white/[0.08] hover:bg-white/[0.16] text-white flex items-center justify-center gap-2 font-medium text-xs sm:text-sm tracking-wide transition-all duration-300 border border-white/15 active:scale-95 cursor-pointer group"
           >
+            {/* Live Online Pulse Dot */}
+            <span className="relative flex h-2 w-2 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+            </span>
+
+            {/* Phone/Chat Icon */}
             <svg
-              className="w-4 h-4 transition-transform group-hover:scale-110"
+              className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12 flex-shrink-0 text-white/90"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -122,11 +112,48 @@ export default function BottomNav() {
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               />
             </svg>
-            <span className="font-medium truncate">Contact Now</span>
+
+            <span className="font-medium truncate text-white/90 group-hover:text-white">Contact Now</span>
+          </button>
+
+          {/* RIGHT BUTTON: Book Appointment (Eye-Catchy Radiant Shimmer CTA) */}
+          <button
+            onClick={() => {
+              setIsContactOpen(false);
+              setIsAppointmentOpen(true);
+            }}
+            className="relative flex-1 py-2.5 sm:py-3 px-3 sm:px-5 rounded-full bg-gradient-to-r from-[#B4745E] via-[#A76D58] to-[#915642] text-white flex items-center justify-center gap-1.5 sm:gap-2 font-medium text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-[0_4px_20px_rgba(167,109,88,0.5)] hover:shadow-[0_6px_28px_rgba(167,109,88,0.7)] hover:brightness-110 active:scale-95 cursor-pointer overflow-hidden group"
+          >
+            {/* Continuous Diagonal Light Beam Shimmer */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden rounded-full pointer-events-none">
+              <div className="w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 animate-shimmer" />
+            </div>
+
+            {/* Sparkle/Calendar Icon with Rotation on Hover */}
+            <svg
+              className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 flex-shrink-0 text-[#FFE4D6]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.2}
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+
+            <span className="font-semibold truncate tracking-wider">Book Appointment</span>
+
+            {/* Micro Badge */}
+            <span className="hidden xs:inline-flex items-center text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-white/20 text-white font-medium border border-white/20">
+              Free
+            </span>
           </button>
 
         </div>
-      </div>
+      </aside>
 
       {/* ─────────────────────────────────────────────────────────────
           2. SLIDE-UP APPOINTMENT FORM MODAL (Bottom Sheet)
@@ -141,12 +168,12 @@ export default function BottomNav() {
           onClick={() => {
             if (!isSubmitted) setIsAppointmentOpen(false);
           }}
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+          className="absolute inset-0 bg-black/65 backdrop-blur-md transition-opacity"
         />
 
         {/* Slide-Up Bottom Sheet Panel */}
         <div
-          className={`absolute bottom-0 inset-x-0 max-w-xl mx-auto bg-white rounded-t-[32px] sm:rounded-t-[36px] shadow-[0_-20px_60px_rgba(0,0,0,0.35)] border-t border-[#DFD9CF] overflow-hidden transition-transform duration-500 ease-out flex flex-col max-h-[92vh] ${
+          className={`absolute bottom-0 inset-x-0 max-w-xl mx-auto bg-white rounded-t-[32px] sm:rounded-t-[36px] shadow-[0_-20px_60px_rgba(0,0,0,0.35)] border-t border-[#DFD9CF] overflow-hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col max-h-[92vh] ${
             isAppointmentOpen ? 'translate-y-0' : 'translate-y-full'
           }`}
         >
@@ -168,7 +195,7 @@ export default function BottomNav() {
               </p>
             </div>
 
-            {/* Close Button (X) */}
+            {/* Close Button ('X') */}
             <button
               onClick={() => setIsAppointmentOpen(false)}
               aria-label="Close"
@@ -201,7 +228,7 @@ export default function BottomNav() {
                     Submitted! We will get to you soon
                   </h4>
                   <p className="text-sm text-[#55524E] font-light max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-[#1A1918]">{formData.name || 'valued client'}</span>! Our founding team will reach out to you on WhatsApp/Phone shortly to confirm your slot.
+                    Thank you, <span className="font-semibold text-[#1A1918]">{formData.name || 'valued client'}</span>! Our founding team will reach out to you on WhatsApp/Phone shortly to confirm your consultation slot.
                   </p>
                 </div>
 
@@ -361,12 +388,12 @@ export default function BottomNav() {
         {/* Backdrop Overlay */}
         <div
           onClick={() => setIsContactOpen(false)}
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+          className="absolute inset-0 bg-black/65 backdrop-blur-md transition-opacity"
         />
 
         {/* Slide-Up Bottom Sheet Panel */}
         <div
-          className={`absolute bottom-0 inset-x-0 max-w-md mx-auto bg-white rounded-t-[32px] shadow-[0_-20px_60px_rgba(0,0,0,0.35)] border-t border-[#DFD9CF] p-6 sm:p-7 overflow-hidden transition-transform duration-500 ease-out space-y-5 ${
+          className={`absolute bottom-0 inset-x-0 max-w-md mx-auto bg-white rounded-t-[32px] shadow-[0_-20px_60px_rgba(0,0,0,0.35)] border-t border-[#DFD9CF] p-6 sm:p-7 overflow-hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] space-y-5 ${
             isContactOpen ? 'translate-y-0' : 'translate-y-full'
           }`}
         >
