@@ -106,17 +106,15 @@ export default function Navbar() {
           {/* Right: Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Consultation CTA Pill (Desktop) */}
-            <a
-              href="https://wa.link/hb34lu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white text-[#121110] text-[11px] font-semibold uppercase tracking-[0.16em] hover:bg-[#F3EFE6] hover:scale-105 shadow-md transition-all duration-300"
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-appointment-modal'))}
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white text-[#121110] text-[11px] font-semibold uppercase tracking-[0.16em] hover:bg-[#F3EFE6] hover:scale-105 shadow-md transition-all duration-300 cursor-pointer"
             >
               <span>Consultation</span>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </a>
+            </button>
 
             {/* Mobile Menu Trigger Button (Dynamic Island Toggle) */}
             <button
@@ -230,18 +228,19 @@ export default function Navbar() {
 
         {/* Drawer Bottom Actions & Contacts */}
         <div className="pt-6 border-t border-white/10 space-y-4">
-          {/* WhatsApp Direct Consultation */}
-          <a
-            href="https://wa.link/hb34lu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-white text-[#121110] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#F3EFE6] shadow-lg transition-all duration-300"
+          {/* WhatsApp Direct Consultation / Modal Trigger */}
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              window.dispatchEvent(new CustomEvent('open-appointment-modal'));
+            }}
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-white text-[#121110] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#F3EFE6] shadow-lg transition-all duration-300 cursor-pointer"
           >
             <span>Book Consultation</span>
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </button>
 
           {/* Social Links & Info */}
           <div className="flex items-center justify-between px-2 pt-2 text-white/60 text-xs">
